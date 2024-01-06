@@ -1,5 +1,3 @@
-using angnet.Controllers;
-
 namespace angnet.Data
 {
     public static class Data

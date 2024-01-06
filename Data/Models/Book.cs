@@ -1,6 +1,6 @@
 using System;
 
-namespace angnet.Controllers
+namespace angnet.Data
 {
     public class Book
     {

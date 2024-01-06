@@ -4,6 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddTransient<angnet.Data.IBookService, angnet.Data.BookService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

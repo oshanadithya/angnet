@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from 'src/app/interfaces/book';
+import { BookService } from 'src/app/services/book.service';
 
 @Component({
   selector: 'app-books',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksComponent implements OnInit {
 
-  constructor() { }
+  public books: Book[] = [];
+
+  constructor(private service: BookService) { }
 
   ngOnInit(): void {
+    this.service.getAllBooks().subscribe(
+      data => {
+        this.books = data;
+        console.log("books :", this.books);
+      },
+      error => {
+        console.error("Error fetching books:", error);
+      }
+    );
   }
 
 }

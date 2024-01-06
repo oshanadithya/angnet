@@ -14,7 +14,7 @@ import { DeleteBookComponent } from './components/delete-book/delete-book.compon
 import { NewBookComponent } from './components/new-book/new-book.component';
 import { ShowBookComponent } from './components/show-book/show-book.component';
 import { UpdateBookComponent } from './components/update-book/update-book.component';
-import { BookService } from './book.service';
+import { BookService } from './services/book.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { BookService } from './book.service';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'books', component: NewBookComponent },
+      { path: 'books', component: BooksComponent },
       { path: 'new-book/:id', component: NewBookComponent },
       { path: 'update-book/:id', component: UpdateBookComponent },
       { path: 'delete-book/:id', component: DeleteBookComponent }
