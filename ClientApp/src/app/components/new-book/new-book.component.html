@@ -6,6 +6,9 @@
                     <h4 class="mb-0">Add Book</h4>
                 </div>
                 <div class="card-body add-book">
+                    <div *ngIf="showError" class="alert alert-danger" role="alert">
+                        Book was not added to your librery. Please, try again!
+                    </div>
                     <form [formGroup]="addBookForm" method="POST" (ngSubmit)="onSubmit()">
                         <div class="form-group row">
                             <label for="title" class="col-md-3 col-form-label required">Title</label>
