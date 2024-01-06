@@ -3,7 +3,7 @@
     class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
   >
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">angnet</a>
+      <a class="navbar-brand" [routerLink]="['/']">Book Summeries Management</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -28,18 +28,18 @@
             <a class="nav-link text-dark" [routerLink]="['/new-book']">Add</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/books']"
+              >Books </a
+            >
+          </li>
+          <!-- <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/counter']"
               >Counter</a
             >
-          </li>
+          </li> -->
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
-              >Fetch data</a
-            >
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/books']"
-              >Books </a
+              >Weather Report</a
             >
           </li>
         </ul>

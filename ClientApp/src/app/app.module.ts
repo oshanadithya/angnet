@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -33,14 +33,16 @@ import { BookService } from './services/book.service';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'books', component: BooksComponent },
-      { path: 'new-book/:id', component: NewBookComponent },
+      { path: 'new-book', component: NewBookComponent },
       { path: 'update-book/:id', component: UpdateBookComponent },
-      { path: 'delete-book/:id', component: DeleteBookComponent }
+      { path: 'delete-book/:id', component: DeleteBookComponent },
+      { path: 'show-book/:id', component: ShowBookComponent }
     ])
   ],
   providers: [BookService],

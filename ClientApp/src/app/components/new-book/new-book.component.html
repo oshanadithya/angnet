@@ -1,9 +1,62 @@
-<p>new-book works!</p>
-
-
-<form action="">
-    <div class="form-group">
-        <label for="title"> Title </label>
-        <input type="text" class="form-controll" id="description" placeholder="Book Title">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0">Add Book</h4>
+                </div>
+                <div class="card-body add-book">
+                    <form [formGroup]="addBookForm" method="POST" (ngSubmit)="onSubmit()">
+                        <div class="form-group row">
+                            <label for="title" class="col-md-3 col-form-label required">Title</label>
+                            <div class="col-md-9">
+                                <input type="text" form class="form-control" formControlName="title" id="title" placeholder="Book Title">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="author" class="col-md-3 col-form-label required">Author</label>
+                            <div class="col-md-9">
+                                <input type="text" formControlName="author" class="form-control" id="author" placeholder="Book Author">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="description" class="col-md-3 col-form-label required">Description</label>
+                            <div class="col-md-9">
+                                <textarea type="text" formControlName="description" class="form-control" id="description" placeholder="Book Description">
+                                    
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="datestart" class="col-md-3 col-form-label required">Date Start</label>
+                            <div class="col-md-4">
+                                <input type="date" formControlName="dateStart" class="form-control" id="datestart">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="dateread" class="col-md-3 col-form-label required">Date Read</label>
+                            <div class="col-md-4">
+                                <input type="date" formControlName="dateRead" class="form-control" id="dateread">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="rate" class="col-md-3 col-form-label required">Rate</label>
+                            <div class="col-md-4">
+                                <input type="number" formControlName="rate" min="0" max="5" class="form-control" id="rate" placeholder="Rate">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <div class="col-md-1 offset-md-3">
+                                <button type="submit" class="btn btn-success">Add</button>
+                            </div>
+                            <div class="col-md-1 offset-md-3">
+                                <button class="btn btn-danger" [routerLink]="['/books']">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-</form>
+</div>

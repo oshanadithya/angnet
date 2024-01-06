@@ -25,10 +25,11 @@
             <td>{{book.rate}}</td>
             <td>{{book.dateStart | date: "dd/MM/yyyy"}}</td>
             <td>{{book.dateRead | date: "dd/MM/yyyy"}}</td>
-            <td>{{book.title}}</td>
             <td>{{book.dateRead ? "Read" : book.dateStart ? "In Proggress" : "Not Started Reading"}}</td>
             <td>
-                Actions
+                <button type="button" class="btn btn-default btn-sm" (click)="showBook(book.id)">Show</button>
+                <button type="button" class="btn btn-success btn-sm" (click)="updateBook(book.id)">Update</button>
+                <button type="button" class="btn btn-danger btn-sm" (click)="deleteBook(book.id)">Delete</button>
             </td>
         </tr>
     </tbody>
